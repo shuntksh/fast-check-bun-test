@@ -9,7 +9,7 @@
 
 ## Installation
 
-Install `fast-check-bun-test` as a development dependency:
+Install `fast-check-bun-test` as a development dependency. Note that the package requires `fast-check` as a peer dependency, so you must install it separately.
 
 ```bash
 bun add --dev fast-check-bun-test
