@@ -1,5 +1,10 @@
 # fast-check-bun-test
 
+![NPM Version](https://img.shields.io/npm/v/fast-check-bun-test)
+![NPM License](https://img.shields.io/npm/l/fast-check-bun-test)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/shuntksh/fast-check-bun-test/ci.yaml)
+
+
 `fast-check-bun-test` is a fork of [`@fast-check/vitest`](https://github.com/dubzzz/fast-check/tree/main/packages/vitest), adapted to integrate property-based testing with [`bun:test`](https://bun.sh/docs/cli/test). It leverages the power of [fast-check](https://fast-check.dev/) to generate random inputs and verify your code’s behavior under a wide range of scenarios, all within Bun’s lightweight and fast testing framework.
 
 ## Installation
