@@ -1,0 +1,24 @@
+{
+	"ignorePaths": [
+		"__snapshots__",
+		"__generated__*",
+		"bun.lock",
+		"**/node_modules/*",
+		"migrations",
+		"uv.lock",
+		"dist",
+		".next",
+		"assets",
+		".data"
+	],
+	"dictionaries": [
+		"custom-words"
+	],
+	"dictionaryDefinitions": [
+		{
+			"name": "custom-words",
+			"path": "./.vscode/custom-words.txt",
+			"addWords": true
+		}
+	]
+}

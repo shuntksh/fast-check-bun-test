@@ -1,0 +1,52 @@
+{
+	"name": "fast-check-bun-test",
+	"description": "fast-check for bun:test",
+	"version": "0.0.1",
+	"license": "MIT",
+	"type": "module",
+	"authors": [
+		{
+			"name": "Nicolas DUBIEN",
+			"email": "github@dubien.org"
+		},
+		{
+			"name": "Shun Takahashi",
+			"email": "shun.takahashi.dev@gmail.com"
+		}
+	],
+	"files": [
+		"dist"
+	],
+	"types": "./dist/fast-check-bun-test.d.ts",
+	"module": "./dist/fast-check-bun-test.js",
+	"exports": {
+		"./package.json": "./package.json",
+		".": {
+			"require": {
+				"types": "./dist/fast-check-bun-test.d.ts",
+				"default": "./dist/fast-check-bun-test.js"
+			},
+			"import": {
+				"types": "./dist/fast-check-bun-test.d.ts",
+				"default": "./dist/fast-check-bun-test.js"
+			}
+		}
+	},
+	"scripts": {
+		"build": "tsup",
+		"test": "bun test"
+	},
+	"dependencies": {
+		"fast-check": "^3.0.0"
+	},
+	"peerDependencies": {
+		"typescript": "^5",
+		"fast-check": "^3.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/bun": "latest",
+		"fast-check-bun-test": "link:fast-check-bun-test",
+		"tsup": "8.4.0"
+	}
+}
