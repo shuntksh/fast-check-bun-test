@@ -27,8 +27,6 @@ jobs:
       # Install bun using the official action - https://github.com/oven-sh/setup-bun
       - name: Setup bun
         uses: oven-sh/setup-bun@v2
-        with:
-          bun-version-file: package.json
 
       # Install bun using the official action - https://github.com/oven-sh/setup-bun
       - name: Link local module
