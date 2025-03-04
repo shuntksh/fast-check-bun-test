@@ -1,7 +1,7 @@
 {
 	"name": "fast-check-bun-test",
 	"description": "fast-check for bun:test",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"license": "MIT",
 	"type": "module",
 	"authors": [
