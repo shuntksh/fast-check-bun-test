@@ -14,6 +14,19 @@
 			"email": "shun.takahashi.dev@gmail.com"
 		}
 	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/shuntksh/fast-check-bun-test.git"
+	},
+	"keywords": [
+		"bun",
+		"bun:test",
+		"generative",
+		"property-based testing",
+		"testing",
+		"fast-check"
+	],
+
 	"files": ["dist"],
 	"types": "./dist/fast-check-bun-test.d.ts",
 	"module": "./dist/fast-check-bun-test.js",
