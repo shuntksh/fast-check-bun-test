@@ -175,5 +175,7 @@ function expectPass(out: string): void {
 }
 
 function expectSkip(out: string): void {
-	expect(out).toContain(`↓ ${specFileName}`);
+	expect(out).toContain(`${specFileName}`);
+	expect(out).toContain("0 pass");
+	expect(out).toContain("1 skip");
 }

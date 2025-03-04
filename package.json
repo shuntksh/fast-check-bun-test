@@ -14,9 +14,7 @@
 			"email": "shun.takahashi.dev@gmail.com"
 		}
 	],
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"types": "./dist/fast-check-bun-test.d.ts",
 	"module": "./dist/fast-check-bun-test.js",
 	"exports": {
@@ -34,10 +32,14 @@
 	},
 	"scripts": {
 		"build": "tsup",
-		"test": "bun test"
+		"test": "bun test",
+		"lint": "biome check ./src",
+		"lint:ci": "biome ci ./src",
+		"format": "biome check --write ./src"
 	},
 	"dependencies": {
-		"fast-check": "^3.0.0"
+		"fast-check": "^3.0.0",
+		"vitest": "3.0.7"
 	},
 	"peerDependencies": {
 		"typescript": "^5",

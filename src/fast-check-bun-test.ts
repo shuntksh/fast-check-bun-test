@@ -5,6 +5,6 @@ import { buildTest } from "./internals/TestBuilders";
 import type { FastCheckItBuilder } from "./internals/TestBuilders";
 import type { It } from "./internals/types";
 
-export const test: FastCheckItBuilder<It> = buildTest(testBunTest, fc);
-export const it: FastCheckItBuilder<It> = buildTest(itBunTest, fc);
+export const test = buildTest<It>(testBunTest, fc);
+export const it: FastCheckItBuilder<It> = buildTest<It>(itBunTest, fc);
 export { fc };

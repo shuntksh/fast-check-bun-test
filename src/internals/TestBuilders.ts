@@ -150,23 +150,20 @@ function buildTestProp<Ts extends [any] | any[], TsParameters extends Ts = Ts>(
 /**
  * Revamped {it,test} with added `.prop`
  */
-export type FastCheckItBuilder<T> = T &
-	("each" extends keyof T
-		? T & {
-				prop: <Ts, TsParameters extends Ts = Ts>(
-					arbitraries: Ts extends [any] | any[]
-						? ArbitraryTuple<Ts>
-						: ArbitraryRecord<Ts>,
-					params?: FcParameters<TsParameters>,
-				) => (
-					testName: string,
-					prop: Ts extends [any] | any[] ? Prop<Ts> : PropRecord<Ts>,
-					timeout?: number,
-				) => void;
-			}
-		: T) & {
-		[K in keyof Omit<T, "each">]: FastCheckItBuilder<T[K]>;
-	};
+export type FastCheckItBuilder<T> = T & {
+	prop: <Ts, TsParameters extends Ts = Ts>(
+		arbitraries: Ts extends [any] | any[]
+			? ArbitraryTuple<Ts>
+			: ArbitraryRecord<Ts>,
+		params?: FcParameters<TsParameters>,
+	) => (
+		testName: string,
+		prop: Ts extends [any] | any[] ? Prop<Ts> : PropRecord<Ts>,
+		timeout?: number,
+	) => void;
+} & {
+	[K in keyof T]: FastCheckItBuilder<T[K]>;
+};
 
 /**
  * Build the enriched version of {it,test}, the one with added `.prop`
@@ -178,6 +175,8 @@ export function buildTest<T extends (...args: any[]) => any>(
 ): FastCheckItBuilder<T> {
 	let atLeastOneExtra = false;
 	const extraKeys: Partial<FastCheckItBuilder<T>> = {};
+
+	// Recursively enhance all function properties
 	for (const unsafeKey of Object.getOwnPropertyNames(testFn)) {
 		const key = unsafeKey as keyof typeof testFn & string;
 		if (!ancestors.has(key) && typeof testFn[key] === "function") {
@@ -188,16 +187,18 @@ export function buildTest<T extends (...args: any[]) => any>(
 					: testFn[key];
 		}
 	}
+
+	// If no extra properties were found, return the original function with .prop
 	if (!atLeastOneExtra) {
-		return testFn as FastCheckItBuilder<T>;
+		const enrichedTestFn = (...args: Parameters<T>): ReturnType<T> =>
+			testFn(...args);
+		extraKeys.prop = buildTestProp(testFn as any, fc) as any; // Always add .prop
+		return Object.assign(enrichedTestFn, extraKeys) as FastCheckItBuilder<T>;
 	}
+
+	// Enhance the function and always add .prop
 	const enrichedTestFn = (...args: Parameters<T>): ReturnType<T> =>
 		testFn(...args);
-	if ("each" in testFn) {
-		extraKeys["prop" as keyof typeof extraKeys] = buildTestProp(
-			testFn as any,
-			fc,
-		) as any;
-	}
+	extraKeys.prop = buildTestProp(testFn as any, fc) as any; // Always add .prop
 	return Object.assign(enrichedTestFn, extraKeys) as FastCheckItBuilder<T>;
 }

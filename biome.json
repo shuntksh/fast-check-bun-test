@@ -36,7 +36,8 @@
 			"suspicious": {
 				"noConfusingVoidType": "off",
 				"noExplicitAny": "off",
-				"noThenProperty": "off"
+				"noThenProperty": "off",
+				"noSelfCompare": "off"
 			}
 		}
 	},
