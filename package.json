@@ -1,7 +1,7 @@
 {
 	"name": "fast-check-bun-test",
 	"description": "fast-check for bun:test",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"license": "MIT",
 	"type": "module",
 	"authors": [
@@ -11,7 +11,7 @@
 		},
 		{
 			"name": "Shun Takahashi",
-			"email": "shun.takahashi.dev@gmail.com"
+			"email": "takahashi@shun.dev"
 		}
 	],
 	"repository": {
@@ -49,10 +49,6 @@
 		"lint": "biome check ./src",
 		"lint:ci": "biome ci ./src",
 		"format": "biome check --write ./src"
-	},
-	"dependencies": {
-		"fast-check": "^3.0.0",
-		"vitest": "3.0.7"
 	},
 	"peerDependencies": {
 		"typescript": "^5",
