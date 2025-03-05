@@ -1,7 +1,7 @@
 import { readConfigureGlobal } from "fast-check";
 
 import type { Parameters as FcParameters } from "fast-check";
-import type { ArbitraryTuple, FcExtra, It, PromiseProp, Prop } from "./types";
+import type { ArbitraryTuple, FcExtra, PromiseProp, Prop, Test } from "./types";
 
 function wrapProp<Ts extends [any] | any[]>(prop: Prop<Ts>): PromiseProp<Ts> {
 	return (...args: Ts) => Promise.resolve(prop(...args));
@@ -11,7 +11,7 @@ export function buildTestWithPropRunner<
 	Ts extends [any] | any[],
 	TsParameters extends Ts = Ts,
 >(
-	testFn: It | It["only" | "skip"],
+	testFn: Test | Test["only" | "skip"],
 	label: string,
 	arbitraries: ArbitraryTuple<Ts>,
 	prop: Prop<Ts>,

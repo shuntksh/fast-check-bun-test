@@ -1,4 +1,4 @@
-import type { it as itBunTest } from "bun:test";
+import type { Test as BunTest } from "bun:test";
 import type {
 	Arbitrary,
 	assert,
@@ -11,8 +11,7 @@ export type FcExtra = {
 	assert: typeof assert;
 	readConfigureGlobal: typeof readConfigureGlobal;
 };
-
-export type It = typeof itBunTest;
+export type Test = BunTest;
 
 // Pre-requisite: https://github.com/Microsoft/TypeScript/pull/26063
 // Require TypeScript 3.1

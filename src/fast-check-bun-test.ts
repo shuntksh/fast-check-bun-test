@@ -3,8 +3,8 @@ import * as fc from "fast-check";
 import { buildTest } from "./internals/TestBuilders";
 
 import type { FastCheckItBuilder } from "./internals/TestBuilders";
-import type { It } from "./internals/types";
+import type { Test } from "./internals/types";
 
-export const test = buildTest<It>(testBunTest, fc);
-export const it: FastCheckItBuilder<It> = buildTest<It>(itBunTest, fc);
+export const test = buildTest<Test>(testBunTest, fc);
+export const it: FastCheckItBuilder<Test> = buildTest<Test>(itBunTest, fc);
 export { fc };
