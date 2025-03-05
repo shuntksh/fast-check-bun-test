@@ -56,7 +56,6 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@types/bun": "1.2.4",
-		"fast-check-bun-test": "link:fast-check-bun-test",
 		"tsup": "8.4.0"
 	}
 }

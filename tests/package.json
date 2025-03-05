@@ -1,0 +1,9 @@
+{
+	"name": "tests",
+	"version": "1.0.0",
+	"description": "Tests for the project",
+	"main": "index.js",
+	"dependencies": {
+		"fast-check-bun-test": "link:fast-check-bun-test"
+	}
+}

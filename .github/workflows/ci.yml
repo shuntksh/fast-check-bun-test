@@ -35,7 +35,7 @@ jobs:
       # Install dependencies. Omitting cache per -
       # https://github.com/oven-sh/setup-bun/issues/14#issuecomment-1714116221
       - name: Install dependencies - bun
-        run: bun install --silent --frozen-lockfile
+        run: bun install --silent --frozen-lockfile && cd tests && bun install --silent --frozen-lockfile
 
       #
       # Lint -----------------------------------------------------------------
