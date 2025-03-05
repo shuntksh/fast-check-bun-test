@@ -4,14 +4,14 @@
     "": {
       "name": "fast-check-bun-test",
       "devDependencies": {
-        "@biomejs/biome": "latest",
-        "@types/bun": "latest",
+        "@biomejs/biome": "1.9.4",
+        "@types/bun": "1.2.4",
         "fast-check-bun-test": "link:fast-check-bun-test",
-        "tsup": "latest",
+        "tsup": "8.4.0",
       },
       "peerDependencies": {
-        "fast-check": "latest",
-        "typescript": "latest",
+        "fast-check": "3.23.2",
+        "typescript": "5.8.2",
       },
     },
   },
