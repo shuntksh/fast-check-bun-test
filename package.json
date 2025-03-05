@@ -26,7 +26,6 @@
 		"testing",
 		"fast-check"
 	],
-
 	"files": ["dist"],
 	"types": "./dist/fast-check-bun-test.d.ts",
 	"module": "./dist/fast-check-bun-test.js",
@@ -51,12 +50,12 @@
 		"format": "biome check --write ./src"
 	},
 	"peerDependencies": {
-		"typescript": "^5",
-		"fast-check": "^3.0.0"
+		"typescript": "5.8.2",
+		"fast-check": "3.23.2"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@types/bun": "latest",
+		"@types/bun": "1.2.4",
 		"fast-check-bun-test": "link:fast-check-bun-test",
 		"tsup": "8.4.0"
 	}
