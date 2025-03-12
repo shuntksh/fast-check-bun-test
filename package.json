@@ -51,11 +51,11 @@
 	},
 	"peerDependencies": {
 		"typescript": "5.8.2",
-		"fast-check": "3.23.2"
+		"fast-check": "^3 || ^4"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@types/bun": "1.2.4",
+		"@types/bun": "1.2.5",
 		"fast-check-bun-test": "link:fast-check-bun-test",
 		"tsup": "8.4.0"
 	}
