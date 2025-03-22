@@ -51,7 +51,7 @@
 	},
 	"peerDependencies": {
 		"typescript": "5.8.2",
-		"fast-check": "^3 || ^4"
+		"fast-check": "4.0.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
